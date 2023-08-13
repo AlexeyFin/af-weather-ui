@@ -1,0 +1,23 @@
+<mat-card>
+  <mat-card-content>
+    <app-top-searches></app-top-searches>
+    <div class="form-wrap">
+      <form class="form search-form row" [formGroup]="searchForm" (submit)="submit()">
+        <div class="form-group col-12">
+          <mat-form-field class="search-form-input">
+            <mat-label>Search</mat-label>
+            <input formControlName="city" type="text" matInput>
+            <mat-hint class="hint">Input your city name here!</mat-hint>
+            <mat-icon class="input-icon" matSuffix>search</mat-icon>
+            <mat-error *ngIf="searchForm.controls['city'].hasError('required')">
+              City name is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="form-group col-12">
+          <button type="submit" mat-raised-button color="primary">Search</button>
+        </div>
+      </form>
+    </div>
+  </mat-card-content>
+</mat-card>

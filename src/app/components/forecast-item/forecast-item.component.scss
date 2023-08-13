@@ -1,0 +1,9 @@
+.forecast-item {
+  padding: 16px;
+  border: 1px solid black;
+  border-radius: 5px;
+  &-props {
+    list-style-type: none;
+    padding-left: 0;
+  }
+}

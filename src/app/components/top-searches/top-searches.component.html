@@ -1,0 +1,5 @@
+<div class="top-searches">
+  <a class="item" *ngFor="let item of topSearcher" (click)="getForecast(item.key)">
+    {{item.key}}
+  </a>
+</div>

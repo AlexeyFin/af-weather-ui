@@ -1,0 +1,22 @@
+<div class="forecast-item" *ngIf="forecast">
+  <ul class="forecast-item-props">
+    <li>
+      Time: {{forecast.dt_txt | date: 'shortTime'}}
+    </li>
+    <li>Temperature: {{forecast.main.temp}}</li>
+    <li>Temperature max: {{forecast.main.temp_max}}</li>
+    <li>Temperature min: {{forecast.main.temp_min}}</li>
+    <li>Feels like: {{forecast.main.feels_like}}</li>
+    <li>Humidity: {{forecast.main.humidity}}</li>
+    <li>Pressure: {{forecast.main.pressure}}</li>
+    <li>Wind: {{forecast.wind.speed}}</li>
+    <li>
+      Weather:
+
+      <span *ngFor="let item of forecast.weather">
+        {{item.main}}, {{item.description}}
+      </span>
+    </li>
+    <li></li>
+  </ul>
+</div>

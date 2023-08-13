@@ -1,0 +1,29 @@
+@import "../../../assets/scss/variables";
+
+.forecast-row {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  @include tablet {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+  }
+  &-item {
+    width: calc(25% - 16px);
+    margin-right: 16px;
+    margin-bottom: 16px;
+    @include tablet {
+      //max-width: 50%;
+      width: calc(50% - 16px);
+    }
+
+    @include tablet {
+      width: 100%;
+      max-width: unset;
+      min-width: 100%;
+    }
+    &:last-child{
+      margin-right: 0;
+    }
+  }
+}

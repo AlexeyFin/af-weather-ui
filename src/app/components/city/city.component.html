@@ -1,0 +1,10 @@
+<mat-card *ngIf="(city$  | async)?.id">
+  <mat-card-header>
+    <h2>City: {{(city$ | async)?.name}}</h2>
+  </mat-card-header>
+  <mat-card-content>
+    <ng-container *ngIf="(currentWeather$ | async)">
+      <app-forecast-item [forecast]="(currentWeather$ | async)"></app-forecast-item>
+    </ng-container>
+  </mat-card-content>
+</mat-card>
