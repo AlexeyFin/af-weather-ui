@@ -14,15 +14,11 @@ export const getCurrentWeather = createSelector(
   (state: IForecastState) => state.forecasts[0]
 );
 
-export const getForecasts = createSelector(
-  fromFeature.getForecastState,
-  (state: IForecastState) => state.forecasts
-);
 export const getForecastsGroupedByDate = createSelector(
   fromFeature.getForecastState,
   (state: IForecastState) => {
     const forecasts = [...state.forecasts];
-    const result:IGroupedForecast = {};
+    const result: IGroupedForecast = {};
 
     forecasts.forEach(forecast => {
       const date = forecast.dt_txt.split(' ')[0]
@@ -37,8 +33,3 @@ export const getForecastsGroupedByDate = createSelector(
 
   }
 );
-
-export const getForecastError = createSelector(
-  fromFeature.getForecastState,
-  (state: IForecastState) => state.error
-)
