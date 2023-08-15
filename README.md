@@ -2,13 +2,24 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.0.
 
+## OpenWeather API
+
+Open weather API requires key to be added to each reqeust;
+You can get it [here](https://openweathermap.org/api) or use mine `950fe7fa9b501994b1f5fe3678a1e2f4` (I will deactivate it by the end of August);
+
+Please add the key to the [environment.ts](src/environments/environments.ts) file as a value for `apiKey`.
+
 ## Development server
+
+Requirements: `node` version 16 or higher;
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Running with Docker
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Run `docker build -t weather-app-image .` for building am image;
+Run `docker run -d -p 8080:80 weather-app-image:latest` for starting the container;
+The application will be available on http://localhost:8080/ 
 
 ## Build
 
@@ -18,10 +29,3 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
