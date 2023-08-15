@@ -27,5 +27,4 @@ export class TopSearchesComponent implements OnInit {
   getForecast(city: string): void {
     this.store.dispatch(getForecast({payload: city}));
   }
-
 }

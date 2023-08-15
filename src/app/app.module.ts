@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -21,7 +21,7 @@ import { ForecastComponent } from './components/forecast/forecast.component';
 import { ForecastItemComponent } from './components/forecast-item/forecast-item.component';
 import { ForecastRowComponent } from './components/forecast-row/forecast-row.component';
 import {ToastrModule} from "ngx-toastr";
-import { TopSearchesComponent } from './components/top-searches/top-searches.component';
+import {TopSearchesComponent} from "./components/top-searches/top-searches.component";
 
 @NgModule({
   declarations: [

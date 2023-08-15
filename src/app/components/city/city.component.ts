@@ -10,7 +10,7 @@ import {IForecast} from "../../interfaces/forecast.interface";
   templateUrl: './city.component.html',
   styleUrls: ['./city.component.scss']
 })
-export class CityComponent implements OnInit {
+export class CityComponent implements OnInit{
 
   public city$: Observable<ICity>;
   public currentWeather$: Observable<IForecast>
@@ -26,8 +26,5 @@ export class CityComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
-
   }
-
 }

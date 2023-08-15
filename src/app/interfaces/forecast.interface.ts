@@ -13,7 +13,10 @@ export interface IForecast {
     pod: string;
   };
   visibility: number;
-  weather: IForecastWeather[]
+  weather: IForecastWeather[],
+  rain?: {
+    [key: string]: number
+  }
 }
 
 export interface IForecastMain {
@@ -38,7 +41,7 @@ export interface IForecastWeather {
 export interface IForecastResponse {
   city: ICity;
   cnt: number;
-  cod: number;
+  cod: number | string;
   list: IForecast[];
   message: number;
 }

@@ -12,6 +12,11 @@ import { MatIconModule} from "@angular/material/icon";
   declarations: [],
   imports: [
     CommonModule,
+    MatToolbarModule,
+    MatCardModule,
+    MatInputModule,
+    MatButtonModule,
+    MatIconModule
   ],
   exports: [
     MatToolbarModule,

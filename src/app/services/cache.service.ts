@@ -2,17 +2,25 @@ import {Injectable} from '@angular/core';
 import {IForecastResponse} from "../interfaces/forecast.interface";
 import {ICache, ITopSearch} from "../interfaces/cashe.interface";
 import {environments} from "../../environments/environments";
-import {J} from "@angular/cdk/keycodes";
 
 export enum CacheKeys {
   Forecast = 'forecasts',
   topSearches = 'topSearches'
 }
 
+export interface ICacheService {
+  saveForecast(forecast: IForecastResponse, key: string): void;
+  getCachedForecast(key: string): ICache<IForecastResponse> | undefined;
+  getCache(): ICache<IForecastResponse>[];
+  forecastsCacheCleanUpAndReturn(): ICache<IForecastResponse>[];
+  forecastsCacheCleanUpAndReturn(): ICache<IForecastResponse>[];
+  getTopSearches(): ITopSearch[];
+  addTopSearchItem(key: string): ITopSearch[];
+}
 @Injectable({
   providedIn: 'root'
 })
-export class CacheService {
+export class CacheService implements ICacheService{
 
   constructor() {
   }
@@ -90,12 +98,6 @@ export class CacheService {
       cache = [...cache, {key, count: 1}]
     }
 
-    localStorage.setItem(CacheKeys.topSearches, JSON.stringify(cache));
-    return cache
-  }
-
-  removeTopSearchItem(key: string): ITopSearch[] {
-    let cache = this.getTopSearches().filter(item => item.key !== key);
     localStorage.setItem(CacheKeys.topSearches, JSON.stringify(cache));
     return cache
   }

@@ -23,9 +23,7 @@ export class SearchComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {
-
-  }
+  ngOnInit(): void {}
 
   submit(): void {
     const city = this.searchForm.get('city')?.value || ''
